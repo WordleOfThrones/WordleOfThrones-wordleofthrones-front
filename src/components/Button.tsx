@@ -8,7 +8,7 @@ export default function Button() {
         <div className="button">
           <div className="text">
             <p>Classico</p>
-            <span>Consiga pistas a cada rodada</span>
+            <span>Cada rodada revela pistas sobre o charater</span>
           </div>
           <Image src="/images/botao.png" alt="button" width={255} height={72} />
         </div>
@@ -24,7 +24,7 @@ export default function Button() {
         <div className="button">
           <div className="text">
             <p>Descricao</p>
-            <span>Com caracteristicas individ</span>
+            <span>Adivinhe o personagem por sua descrição</span>
           </div>
           <Image src="/images/botao.png" alt="button" width={255} height={72} />
         </div>
@@ -40,7 +40,7 @@ export default function Button() {
         <div className="button">
           <div className="text">
             <p>Imagem</p>
-            <span>Adivinhe por imagens desfoc</span>
+            <span>Adivinhe o personagem por foto desfocada</span>
           </div>
           <Image src="/images/botao.png" alt="button" width={255} height={72} />
         </div>
@@ -56,7 +56,7 @@ export default function Button() {
         <div className="button">
           <div className="text">
             <p>Emoji</p>
-            <span>Adivinhe personagens com em</span>
+            <span>Adivinhe personagens com base em emojis</span>
           </div>
           <Image src="/images/botao.png" alt="button" width={255} height={72} />
         </div>
