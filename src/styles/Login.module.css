@@ -1,0 +1,108 @@
+/* styles/Login.module.css */
+.container {
+    margin: 15% 0px 0px 0px 0px;
+    display: flex;
+    height: 100vh;
+    background-color: #2F1D0C;
+  }
+  
+  .welcomeSection {
+    flex: 1;
+    background-color: #A56C42;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .welcomeText h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .welcomeText p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .registerButton {
+    background-color: #613319;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .loginSection {
+    flex: 1;
+    background-color: #5D361B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    flex-direction: column;
+  }
+  
+  .loginSection h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .loginForm {
+    width: 80%;
+    max-width: 300px;
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .inputWithIcon {
+    display: flex;
+    align-items: center;
+    background-color: #3B2B1B;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .inputWithIcon input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    flex: 1;
+    padding-left: 10px;
+  }
+  
+  .inputWithIcon input::placeholder {
+    color: #d0d0d0;
+  }
+  
+  .inputWithIcon svg.icon {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
+  
+  .loginButton {
+    background-color: #613319;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .loginButton:hover {
+    background-color: #4b2b15;
+  }
+  
