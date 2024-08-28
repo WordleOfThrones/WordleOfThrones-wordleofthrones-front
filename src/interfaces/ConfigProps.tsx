@@ -1,0 +1,3 @@
+interface ConfigProps {
+    toggleModal: () => void;
+}
