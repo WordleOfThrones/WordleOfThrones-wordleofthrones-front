@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   color: #FEDFA3;
+  align-items: center;
+  height: 100%;
+  text-align: center;
   margin: 6% 0 2% 0;
   font-size: 1rem;
   text-transform: uppercase;
@@ -9,11 +12,13 @@
 }
 
 .text .titleOne {
+  display: inline-block;
   white-space: nowrap;
   color: #FFA723;
 }
 
 .text .titleTwo {
+  display: inline-block;
   white-space: nowrap;
   color: #FF9255;
 }
