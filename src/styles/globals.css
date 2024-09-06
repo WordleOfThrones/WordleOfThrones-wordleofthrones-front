@@ -7,6 +7,9 @@
   font-style: normal;
 }
 
+@import url('https://fonts.google.com/specimen/Old+Standard+TT?query=old');
+
+
 :root {
   --color-one: #1e1e1e;
   --color-two: #000000;

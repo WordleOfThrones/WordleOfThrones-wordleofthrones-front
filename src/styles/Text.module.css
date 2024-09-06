@@ -5,24 +5,27 @@
   align-items: center;
   height: 100%;
   text-align: center;
-  margin: 6% 0 2% 0;
+  margin: 6% 0 2% 1%;
   font-size: 1rem;
   text-transform: uppercase;
   word-spacing: 0.3rem;
 }
 
 .text .titleOne {
-  display: inline-block;
+  
   white-space: nowrap;
   color: #FFA723;
+text-shadow: #000000 3px 3px;
+
 }
 
 .text .titleTwo {
-  display: inline-block;
+  
   white-space: nowrap;
   color: #FF9255;
+  text-shadow: #000000 3px 3px;
 }
 
 .text .titleThree {
-  margin: 0 1.5%;
+  margin: 0 5%;
 }

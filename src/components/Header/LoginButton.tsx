@@ -4,7 +4,7 @@ import styles from '../../styles/Header.module.css';
 export default function LoginButton({handleLoginClick}: LoginProps) {
   return (
     <div className={styles.loginButtonContainer}>
-      <button className={styles.loginButton} onClick={handleLoginClick}>ENTRAR</button>
+      <button className={styles.loginButton} onClick={handleLoginClick}>SEM PERFIL</button>
     </div>
   );
 };

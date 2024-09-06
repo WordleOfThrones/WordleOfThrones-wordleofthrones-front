@@ -1,87 +1,72 @@
-/* styles/Login.module.css */
 
-/* Importação correta da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 .container {
   display: flex;
-  height: 60vh;
+  height: 56vh;
   margin: 5%;
   margin-top: 7%;
-  border-radius: 10px; /* Bordas arredondadas */
+  border-radius: 20px; 
   overflow: hidden; 
+}
+
+.welcome {
+  background-color: #f7f2f0;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.welcome h2 {
+  font-size: 2rem;
+  color: #8b5e3c;
+  margin-bottom: 10px;
+  font-family: 'Old Standard TT', serif;
+}
+
+.welcome p {
+  font-size: 1.2rem;
+  color: #8b5e3c;
+  margin-bottom: 20px;
+  font-family: 'Old Standard TT', serif;
+}
+
+.registerButton {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #8b5e3c;
+  border-radius: 20px;
+  color: #8b5e3c;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .login {
   background-color: #8b5e3c;
-  width: 30%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
-  padding: 20px;
+  padding: 100px;
   text-align: center;
 }
 
 .login h1 {
   font-size: 2rem;
-  margin-bottom: 10px;
-  margin: 15px 0 20px 3px;
-}
-
-.login h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  font-family: 'Old Standard TT', serif;
-}
-
-.login p {
   margin-bottom: 20px;
   font-family: 'Old Standard TT', serif;
-}
-
-.loginButton {
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 20px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.register {
-  background-color: #f7f2f0;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px;
-  text-align: center;
-}
-
-.register h1 {
-  font-size: 2rem;
-  color: #8b5e3c;
-  margin-bottom: 10px;
-  font-family: 'Old Standard TT', serif;
-}
-
-.register p {
-  color: #8b5e3c;
-  margin-bottom: 20px;
-  font-family: 'Old Standard TT', serif;
-  font-size: 20px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
   width: 50%;
-
 }
 
 .inputGroup {
@@ -89,6 +74,7 @@
   align-items: center;
   margin-bottom: 15px;
   border: 2px solid #8b5e3c;
+  background-color: #f7f2f0;
   padding: 10px;
   border-radius: 5px;
 }
@@ -99,6 +85,7 @@
   outline: none;
   font-size: 1rem;
   background-color: #f7f2f0;
+
 }
 
 .icon {
@@ -108,15 +95,23 @@
 .svgIcon {
   width: 20px;
   height: 20px;
-  fill: #000000; /* Cor do ícone */
+  fill: rgb(0, 0, 0);
 }
 
-.registerButton {
+.loginButton {
   padding: 15px;
-  background-color: #8b5e3c;
-  color: white;
-  border: none;
+  background-color: transparent;
+  border: 2px solid white;
   border-radius: 20px;
-  cursor: pointer;
+  color: white;
   font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.forgotPassword {
+  text-decoration: underline 0.5%;
+  color: white;
+  font-family: 'Old Standard TT', serif;
+ 
 }

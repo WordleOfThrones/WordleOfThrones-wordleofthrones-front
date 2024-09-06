@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+
 .header {
   position: relative;
   display: flex;
@@ -79,7 +82,7 @@
   padding: 20px;
   border-radius: 8px;
   color: #fff;
-  width: 300px;
+  width: 350px;
   text-align: center;
   position: relative;
 }
@@ -103,6 +106,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
+  font-family: 'Old Standard TT', serif;
 }
 
 .switch {
