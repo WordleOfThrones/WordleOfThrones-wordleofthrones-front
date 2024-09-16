@@ -1,64 +1,83 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
+.RegisterPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Container principal */
 .container {
   display: flex;
-  height: 56vh;
-  margin: 5%;
-  margin-top: 7%;
-  border-radius: 20px; 
-  overflow: hidden; 
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 70%;
+  max-width: 1200px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 8%;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
+/* Seção de boas-vindas */
 .welcome {
-  background-color: #f7f2f0;
-  width: 35%;
+  background-color: #f5f5f5;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 130px;
+  border-radius: 20px 0 0 20px;
 }
 
 .welcome h2 {
-  font-size: 2rem;
-  color: #8b5e3c;
-  margin-bottom: 10px;
+  font-size: 28px;
+  color: #8b4513;
+  margin-bottom: 20px;
   font-family: 'Old Standard TT', serif;
 }
 
 .welcome p {
-  font-size: 1.2rem;
-  color: #8b5e3c;
+  font-size: 18px;
+  color: #8b4513;
   margin-bottom: 20px;
   font-family: 'Old Standard TT', serif;
 }
 
 .registerButton {
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: transparent;
-  border: 2px solid #8b5e3c;
-  border-radius: 20px;
-  color: #8b5e3c;
-  font-size: 1rem;
+  border: 2px solid #8b4513;
+  border-radius: 5px;
+  color: #8b4513;
+  font-size: 15px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+.registerButton:hover {
+  background-color: #8b4513;
+  color: white;
+}
+
+/* Seção de login */
 .login {
-  background-color: #8b5e3c;
-  width: 65%;
+  background-color: #8b4513;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 95px;
+  border-radius: 0 20px 20px 0;
   color: white;
-  padding: 100px;
   text-align: center;
 }
 
 .login h1 {
-  font-size: 2rem;
+  font-size: 28px;
   margin-bottom: 20px;
   font-family: 'Old Standard TT', serif;
 }
@@ -66,14 +85,15 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
+  max-width: 400px;
 }
 
 .inputGroup {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  border: 2px solid #8b5e3c;
+  border: 1px solid #CCC;
   background-color: #f7f2f0;
   padding: 10px;
   border-radius: 5px;
@@ -83,9 +103,9 @@
   flex: 1;
   border: none;
   outline: none;
-  font-size: 1rem;
+  font-size: 16px;
   background-color: #f7f2f0;
-
+  padding: 10px;
 }
 
 .icon {
@@ -95,23 +115,39 @@
 .svgIcon {
   width: 20px;
   height: 20px;
-  fill: rgb(0, 0, 0);
+  fill: #8b4513;
 }
 
 .loginButton {
   padding: 15px;
-  background-color: transparent;
+  background-color: #8b4513;
   border: 2px solid white;
-  border-radius: 20px;
+  border-radius: 5px;
   color: white;
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #a0522d;
 }
 
 .forgotPassword {
-  text-decoration: underline 0.5%;
+  text-decoration: underline;
   color: white;
   font-family: 'Old Standard TT', serif;
- 
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .welcome, .login {
+    width: 100%;
+    border-radius: 20px;
+  }
 }

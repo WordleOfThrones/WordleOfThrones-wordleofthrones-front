@@ -1,122 +1,156 @@
-/* styles/Login.module.css */
-
-/* Importação correta da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
-.container {
+/* Alinhamento da seção */
+.loginPage {
   display: flex;
-  height: 60vh;
-  margin: 5%;
-  margin-top: 7%;
-  border-radius: 10px; /* Bordas arredondadas */
-  overflow: hidden; 
-}
-
-.login {
-  background-color: #8b5e3c;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  padding: 20px;
-  text-align: center;
 }
 
-.login h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  margin: 15px 0 20px 3px;
-}
-
-.login h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  font-family: 'Old Standard TT', serif;
-}
-
-.login p {
-  margin-bottom: 20px;
-  font-family: 'Old Standard TT', serif;
-}
-
-.loginButton {
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 2px solid white;
-  border-radius: 20px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.register {
-  background-color: #f7f2f0;
+/* Container das seções de login e cadastro */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
   width: 70%;
+  max-width: 1200px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 8%;
+}
+
+/* Estilo da seção de login */
+.loginSection {
+  background-color: #8B4513;
+  padding: 130px; /* Ajustado para igualar ao anterior */
+  border-radius: 20px 0 0 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 100px;
+  width: 40%;
+  color: white;
+}
+.loginSection h2{
+    font-size: 24px;
+    color: #ffffff;
+text-align: center;
+    font-family: 'Old Standard TT', serif;
+    margin-bottom: 5%
+  }
+.loginSection p {
+  font-size: 16px;
   text-align: center;
-}
-
-.register h1 {
-  font-size: 2rem;
-  color: #8b5e3c;
-  margin-bottom: 10px;
+  line-height: 1.5;
+  color: white;
   font-family: 'Old Standard TT', serif;
 }
 
-.register p {
-  color: #8b5e3c;
+/* Estilo da seção de cadastro */
+.registerSection {
+  background-color: #F5F5F5;
+  padding: 10px; /* Aumentado de 10px para 30px */
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:60%; /* Ajustado de 50% para 60% */
+
+}
+
+.registerSection h2 {
+  font-size: 22px;
   margin-bottom: 20px;
+  color: #8B4513;
+}
+
+.registerSection p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #8B4513;
   font-family: 'Old Standard TT', serif;
-  font-size: 20px;
+}
+
+/* Estrutura do Formulário */
+.formContainer {
+  width: 100%;
+  max-width: 400px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  width: 50%;
-
 }
 
+/* Adicionando ícones dentro dos inputs */
 .inputGroup {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  border: 2px solid #8b5e3c;
   padding: 10px;
+  border: 1px solid #CCC;
   border-radius: 5px;
+  background-color: #F5F5F5;
 }
 
 .inputGroup input {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 1rem;
-  background-color: #f7f2f0;
+  font-size: 16px;
+  padding: 10px;
+  background-color: transparent;
 }
 
+.inputGroup input::placeholder {
+  color: #8B4513;
+}
+
+/* Estilo para o ícone */
 .icon {
   margin-right: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .svgIcon {
   width: 20px;
   height: 20px;
-  fill: #000000; /* Cor do ícone */
+  fill: #8B4513;
 }
 
-.registerButton {
-  padding: 15px;
-  background-color: #8b5e3c;
+/* Estilo de foco no input */
+.inputGroup input:focus {
+  border-color: #8B4513;
+  outline: none;
+  box-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+}
+
+/* Estilo do botão de envio */
+.submitButton {
+  margin-top: 5%;
+  background-color: #8B4513;
   color: white;
+  padding: 15px;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: 1px solid white;
   cursor: pointer;
-  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #A0522D;
+}
+
+/* Estilo responsivo básico */
+@media (max-width: 768px) {
+  .loginContainer {
+    flex-direction: column;
+  }
+
+  .loginSection, .registerSection {
+    width: 100%;
+    border-radius: 20px;
+  }
 }
