@@ -19,7 +19,7 @@ export default function Header() {
     <header className={styles.header}>
       <ConfigButton toggleModal={toggleModal} />
       <Logo />
-      <LoginButton handleLoginClick={handleLoginClick} />
+      <LoginButton />
       <Modal
         isModalOpen={isModalOpen}
         toggleModal={toggleModal}
