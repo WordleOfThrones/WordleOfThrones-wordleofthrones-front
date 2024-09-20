@@ -180,7 +180,7 @@ export default function CharacterForm() {
                 <option value="">Selecione a Religião</option>
                 <option value="Fé dos Sete">Fé dos Sete</option>
                 <option value="Deuses Antigos da Floresta">Deuses Antigos da Floresta</option>
-                <option value="R'hllor">R'hllor (Senhor da Luz)</option>
+                <option value="R'hllor">R&apos;hllor (Senhor da Luz)</option>
                 <option value="O Deus Afogado">O Deus Afogado</option>
                 <option value="O Deus de Muitas Faces">O Deus de Muitas Faces (Homem Sem Rosto)</option>
                 <option value="Os Grandes Mestres de Meereen">Os Grandes Mestres de Meereen (Cultura Essos)</option>
