@@ -1,0 +1,24 @@
+.container {
+  margin-top: 20px;
+}
+
+.characterTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.characterTable th,
+.characterTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.characterTable th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.characterTable img {
+  max-width: 50px;
+  height: auto;
+}

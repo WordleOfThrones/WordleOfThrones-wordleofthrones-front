@@ -84,8 +84,8 @@
 }
 
 .submitButton {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #e3e3e3;
+  color: rgb(100, 100, 100);
   padding: 10px 20px;
   font-size: 1.1rem;
   border: none;
@@ -96,7 +96,7 @@
 }
 
 .submitButton:hover {
-  background-color: #45a049;
+  background-color: #dbdbdb;
 }
 
 .formFileInputWrapper {
