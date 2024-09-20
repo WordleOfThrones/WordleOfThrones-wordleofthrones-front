@@ -32,3 +32,55 @@ body {
   background-attachment: fixed;
 }
 
+.textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.textContainer p {
+  color: #FEDFA3;
+  margin: 6% 0 2% 1%;
+  font-size: 1rem;
+  word-spacing: 0.3rem;
+}
+
+.textContainer .series {
+  color: #FFA723;
+  margin: 0rem;
+}
+
+.textContainer span {
+  color: #FF9255;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+.character-info {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.character-info div {
+  background-color: #28a745; 
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.character-info img {
+  grid-column: span 6;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 auto;
+}

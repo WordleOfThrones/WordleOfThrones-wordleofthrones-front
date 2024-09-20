@@ -1,6 +1,6 @@
 import Header from '../components/Header';
-import Text from '../components/Text';
 import Button from '../components/Button';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -11,20 +11,20 @@ export default function Home() {
       </div>
 
       <div className="textContainer">
-        <Text 
-          text="Adivinhe diariamente um personagem de"
-          textOne="Game of Thrones"
-          textThree="ou"
-          textTwo="House of the Dragon"
-        />
+        <p>Adivinhe diariamente um personagem de <br />
+          <span className="series">Game of Thrones</span> ou 
+          <span>House of the Dragon</span>
+        </p>
       </div>
 
       <div className="buttonsContainer">
-        <Button 
-          title="Classico"
-          info="Consiga pistas a cada tentativa"
-          iconsrc="/images/targeryan.png"
-        />
+        <Link href={'/classic'}>
+          <Button 
+            title="Classico"
+            info="Consiga pistas a cada tentativa"
+            iconsrc="/images/targeryan.png"
+          />
+        </Link>
         <Button 
           title="Descricao"
           info="Adivinhe o personagem pela descrição"
@@ -34,11 +34,6 @@ export default function Home() {
           title="Imagem"
           info="Adivinhe o personagem pela foto desfocada"
           iconsrc="/images/eye.png"
-        />
-        <Button 
-          title="Emojis"
-          info="Adivinhe o personagem pelos emojis"
-          iconsrc="/images/emoji.png"
         />
       </div>
 
