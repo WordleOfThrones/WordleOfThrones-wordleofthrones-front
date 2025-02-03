@@ -30,11 +30,13 @@ export default function Home() {
           info="Adivinhe o personagem pela descrição"
           iconsrc="/images/perg.png"
         />
+         <Link href={'/imagem'}>
         <Button 
           title="Imagem"
           info="Adivinhe o personagem pela foto desfocada"
           iconsrc="/images/eye.png"
         />
+        </Link>
       </div>
 
     </div>
