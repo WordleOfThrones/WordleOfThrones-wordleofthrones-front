@@ -1,10 +1,10 @@
 import React from 'react';
-import { useModalLogic } from '../hooks/useModalLogic';
-import ConfigButton from './Header/Config';
-import Logo from './Header/Logo';
-import LoginButton from './Header/LoginButton';
-import Modal from './Header/Modal';
-import styles from '../styles/Header.module.css';
+import { useModalLogic } from '@/hooks/useModalLogic';
+import ConfigButton from '@/components/Header/Config';
+import Logo from '@/components/Header/Logo';
+import LoginButton from '@/components/Header/LoginButton';
+import Modal from '@/components/Header/Modal';
+import styles from '@/styles/Header.module.css';
 
 export default function Header() {
   const {

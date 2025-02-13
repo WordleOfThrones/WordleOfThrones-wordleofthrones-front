@@ -1,5 +1,5 @@
 // pages/login.js
-import styles from '../styles/RegisterPage.module.css';
+import styles from '@/styles/RegisterPage.module.css';
 import Header from '@/components/Header';
 import { useNavigation } from '@/hooks/useNavigation';
 import LoginForm from '@/components/LoginForm';

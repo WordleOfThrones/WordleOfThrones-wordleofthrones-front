@@ -4,4 +4,3 @@ interface ButtonProps {
   iconsrc: string;
 }
 
-// vhbudehfiwjfiwivioje

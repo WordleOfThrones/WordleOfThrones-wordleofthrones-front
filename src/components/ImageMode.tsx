@@ -1,6 +1,7 @@
 import useFetchCharacter from '@/hooks/useFetchCharacter';
 import styles from '@/styles/ImageMode.module.css';
 import { useState, useEffect } from 'react';
+import Logo from '../components/Header/Logo';
 
 interface WrongGuess {
   nome: string;
@@ -15,7 +16,6 @@ export default function ImageMode() {
     errorMessage,
     handleSubmit,
   } = useFetchCharacter();
-
   const [selectedCharacter, setSelectedCharacter] = useState<any>(null);
   const [blurLevel, setBlurLevel] = useState(10);
   const [message, setMessage] = useState('');
@@ -37,7 +37,6 @@ export default function ImageMode() {
         console.error('Erro ao buscar personagem sorteado:', error);
       }
     };
-
     fetchSelectedCharacter();
   }, []);
 
@@ -45,7 +44,6 @@ export default function ImageMode() {
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleSubmit(e);
-
     if (characterData && selectedCharacter) {
       if (characterData.nome.toLowerCase() === selectedCharacter.nome.toLowerCase()) {
         setMessage('Parabéns! Você acertou!');
@@ -64,6 +62,7 @@ export default function ImageMode() {
 
   return (
     <div className={styles.pageContainer}>
+      <Logo />
       <h2>Adivinhe o Personagem!</h2>
       <form onSubmit={handleSearch} className={styles.form}>
         <input
@@ -77,9 +76,7 @@ export default function ImageMode() {
           Chutar
         </button>
       </form>
-
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
-
       {selectedCharacter && (
         <>
           <div className={styles.imageContainer}>
@@ -93,11 +90,9 @@ export default function ImageMode() {
           <p className={styles.message}>{message}</p>
         </>
       )}
-
       {/* Exibe as tentativas incorretas */}
       {wrongGuesses.length > 0 && (
         <div className={styles.wrongGuessesContainer}>
-       
           <div className={styles.guessesGrid}>
             {wrongGuesses.map((guess, index) => (
               <div key={index} className={styles.wrongGuess}>

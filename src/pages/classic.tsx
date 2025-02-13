@@ -1,7 +1,7 @@
 import useFetchCharacter from '@/hooks/useFetchCharacter';
 import styles from '@/styles/Classic.module.css';
 import { useState, useEffect } from 'react';
-
+import Logo from '../components/Header/Logo';
 export default function Classic() {
   const {
     characterName,
@@ -51,6 +51,7 @@ export default function Classic() {
 
   return (
     <div className={styles.pageContainer}>
+      <Logo />
       <form onSubmit={handleSearch} className={styles.form}>
         <input
           type="text"
@@ -74,6 +75,7 @@ export default function Classic() {
               {characters.map((character, index) => (
                 <div key={index} className={styles.box}>
                   {character.imagem ? (
+                    // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={character.imagem}
                       alt={character.nome || 'Personagem'}
