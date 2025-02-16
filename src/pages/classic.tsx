@@ -2,6 +2,7 @@ import useFetchCharacter from '@/hooks/useFetchCharacter';
 import styles from '@/styles/Classic.module.css';
 import { useState, useEffect } from 'react';
 import Logo from '../components/Header/Logo';
+import CharacterSuggestions from "@/components/CharacterSuggestions";
 export default function Classic() {
   const {
     characterName,
@@ -14,38 +15,10 @@ export default function Classic() {
   const [characters, setCharacters] = useState<any[]>([]);
   const [selectedCharacter, setSelectedCharacter] = useState<any>(null);
 
-
-  const [suggestions, setSuggestions] = useState<string[]>([]);
-
-  const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCharacterName(e.target.value);
-  
-    if (e.target.value.length > 2) {
-      try {
-        console.log("🔍 Buscando todos os personagens...");
-  
-        
-        const response = await fetch(`https://thronesapi-1.onrender.com/api/characters/character-all/`);
-        if (!response.ok) throw new Error("Erro ao buscar personagens");
-  
-        const data = await response.json();
-        console.log("✅ Lista de personagens recebida:", data);
-  
-       
-        const filteredSuggestions = data
-          .filter((char: any) => char.nome.toLowerCase().startsWith(e.target.value.toLowerCase()))
-          .map((char: any) => char.nome);
-  
-        setSuggestions(filteredSuggestions);
-      } catch (error) {
-        console.error("🚨 Erro ao buscar sugestões:", error);
-        setSuggestions([]);
-      }
-    } else {
-      setSuggestions([]);
-    }
   };
-  
+
 
   useEffect(() => {
     const fetchSelectedCharacter = async () => {
@@ -61,7 +34,7 @@ export default function Classic() {
         console.error('Erro ao buscar personagem sorteado:', error);
       }
     };
-  
+
     fetchSelectedCharacter();
   }, []);
 
@@ -80,44 +53,29 @@ export default function Classic() {
 
   const getBoxStyle = (field: string, value: string) => {
     if (!selectedCharacter || !selectedCharacter[field]) return styles.box;
-  
+
     return selectedCharacter[field] === value ? styles.boxGreen : styles.boxRed;
-  };  
+  };
 
   return (
     <div className={styles.pageContainer}>
       <Logo />
       <form onSubmit={handleSearch} className={styles.form}>
-      <div className={styles.inputWrapper}>
-  <input
-    type="text"
-    value={characterName}
-    onChange={handleInputChange}
-    placeholder="Digite o nome do personagem"
-    className={styles.inputField}
-  />
-
-  {suggestions.length > 0 && (
-    <ul className={styles.suggestionsList}>
-      {suggestions.map((suggestion, index) => (
-        <li
-          key={index}
-          className={styles.suggestionItem}
-          onClick={() => {
-            setCharacterName(suggestion);
-            setSuggestions([]); 
-          }}
-        >
-          {suggestion}
-        </li>
-      ))}
-    </ul>
-  )}
-</div>
+        <div className={styles.inputWrapper}>
+          <input
+            type="text"
+            value={characterName}
+            onChange={handleInputChange}
+            placeholder="Digite o nome do personagem"
+            className={styles.inputField}
+          />
 
 
-  <button type="submit" className={styles.button}>Buscar</button>
-</form>
+          <CharacterSuggestions characterName={characterName} setCharacterName={setCharacterName} />
+        </div>
+
+        <button type="submit" className={styles.button}>Buscar</button>
+      </form>
 
 
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
