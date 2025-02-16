@@ -14,6 +14,39 @@ export default function Classic() {
   const [characters, setCharacters] = useState<any[]>([]);
   const [selectedCharacter, setSelectedCharacter] = useState<any>(null);
 
+
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+
+  const handleInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCharacterName(e.target.value);
+  
+    if (e.target.value.length > 2) {
+      try {
+        console.log("🔍 Buscando todos os personagens...");
+  
+        
+        const response = await fetch(`https://thronesapi-1.onrender.com/api/characters/character-all/`);
+        if (!response.ok) throw new Error("Erro ao buscar personagens");
+  
+        const data = await response.json();
+        console.log("✅ Lista de personagens recebida:", data);
+  
+       
+        const filteredSuggestions = data
+          .filter((char: any) => char.nome.toLowerCase().startsWith(e.target.value.toLowerCase()))
+          .map((char: any) => char.nome);
+  
+        setSuggestions(filteredSuggestions);
+      } catch (error) {
+        console.error("🚨 Erro ao buscar sugestões:", error);
+        setSuggestions([]);
+      }
+    } else {
+      setSuggestions([]);
+    }
+  };
+  
+
   useEffect(() => {
     const fetchSelectedCharacter = async () => {
       try {
@@ -34,6 +67,8 @@ export default function Classic() {
 
   useEffect(() => {
     if (characterData && characterData.imagem) {
+
+      console.log("🔍 Personagem Buscado:", characterData);
       setCharacters((prevCharacters) => [characterData, ...prevCharacters]);
     }
   }, [characterData]);
@@ -53,17 +88,37 @@ export default function Classic() {
     <div className={styles.pageContainer}>
       <Logo />
       <form onSubmit={handleSearch} className={styles.form}>
-        <input
-          type="text"
-          value={characterName}
-          onChange={(e) => setCharacterName(e.target.value)}
-          placeholder="Digite o nome do personagem"
-          className={styles.inputField}
-        />
-        <button type="submit" className={styles.button}>
-          Buscar
-        </button>
-      </form>
+      <div className={styles.inputWrapper}>
+  <input
+    type="text"
+    value={characterName}
+    onChange={handleInputChange}
+    placeholder="Digite o nome do personagem"
+    className={styles.inputField}
+  />
+
+  {suggestions.length > 0 && (
+    <ul className={styles.suggestionsList}>
+      {suggestions.map((suggestion, index) => (
+        <li
+          key={index}
+          className={styles.suggestionItem}
+          onClick={() => {
+            setCharacterName(suggestion);
+            setSuggestions([]); 
+          }}
+        >
+          {suggestion}
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
+
+
+  <button type="submit" className={styles.button}>Buscar</button>
+</form>
+
 
       {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
 
