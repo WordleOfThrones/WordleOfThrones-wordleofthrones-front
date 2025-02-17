@@ -1,153 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
-
-.RegisterPage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* Container principal */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 70%;
-  max-width: 1200px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
-  margin-top: 8%;
-  border-radius: 20px;
-  overflow: hidden;
+@font-face {
+  font-family: "GameOfThrones";
+  src: url("/static/fonts/GameOfThrones.woff") format("woff"),
+       url("/static/fonts/GameOfThrones.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Seção de boas-vindas */
-.welcome {
-  background-color: #f5f5f5;
-  width: 40%;
+/* Estilização geral */
+.registerForm {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 130px;
-  border-radius: 20px 0 0 20px;
-}
-
-.welcome h2 {
-  font-size: 28px;
-  color: #8b4513;
-  margin-bottom: 20px;
-  font-family: 'Old Standard TT', serif;
-}
-
-.welcome p {
-  font-size: 18px;
-  color: #8b4513;
-  margin-bottom: 20px;
-  font-family: 'Old Standard TT', serif;
-}
-
-.registerButton {
-  padding: 15px 30px;
-  background-color: transparent;
-  border: 2px solid #8b4513;
-  border-radius: 5px;
-  color: #8b4513;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.registerButton:hover {
-  background-color: #8b4513;
-  color: white;
-}
-
-/* Seção de login */
-.login {
-  background-color: #8b4513;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 95px;
-  border-radius: 0 20px 20px 0;
-  color: white;
-  text-align: center;
-}
-
-.login h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  font-family: 'Old Standard TT', serif;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: #1a1a1d; /* Tom escuro medieval */
+  border: 2px solid #bfa181; /* Dourado envelhecido */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-.inputGroup {
-  display: flex;
-  align-items: center;
+/* Título do formulário */
+.registerForm h2 {
+  font-family: "GameOfThrones", serif;
+  font-size: 28px;
+  color: #bfa181;
+  text-transform: uppercase;
   margin-bottom: 15px;
-  border: 1px solid #CCC;
-  background-color: #f7f2f0;
-  padding: 10px;
-  border-radius: 5px;
+  text-align: center;
 }
 
-.inputGroup input {
-  flex: 1;
-  border: none;
+/* Campos de entrada */
+.registerForm input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background-color: #292929;
+  border: 1px solid #bfa181;
+  border-radius: 5px;
+  color: #e0e0e0;
+  font-size: 16px;
+  font-family: "GameOfThrones", serif;
+  transition: border 0.3s ease-in-out;
+}
+
+.registerForm input::placeholder {
+  color: #bfa181;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.registerForm input:focus {
+  border-color: #e0c097;
   outline: none;
-  font-size: 16px;
-  background-color: #f7f2f0;
-  padding: 10px;
+  box-shadow: 0 0 8px rgba(191, 161, 129, 0.7);
 }
 
-.icon {
-  margin-right: 10px;
-}
-
-.svgIcon {
-  width: 20px;
-  height: 20px;
-  fill: #8b4513;
-}
-
-.loginButton {
-  padding: 15px;
-  background-color: #8b4513;
-  border: 2px solid white;
+/* Botão de cadastro */
+.registerForm button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #bfa181;
+  border: none;
   border-radius: 5px;
-  color: white;
-  font-size: 16px;
+  color: #1a1a1d;
+  font-size: 18px;
+  font-family: "GameOfThrones", serif;
+  text-transform: uppercase;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease-in-out;
 }
 
-.loginButton:hover {
-  background-color: #a0522d;
+.registerForm button:hover {
+  background-color: #e0c097;
 }
 
-.forgotPassword {
-  text-decoration: underline;
-  color: white;
-  font-family: 'Old Standard TT', serif;
+.registerForm button:disabled {
+  background-color: #4a4a4a;
+  cursor: not-allowed;
 }
 
-/* Estilo responsivo */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
+/* Mensagens de erro e sucesso */
+.error, .success {
+  font-family: "GameOfThrones", serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-align: center;
+}
 
-  .welcome, .login {
-    width: 100%;
-    border-radius: 20px;
-  }
+.error {
+  color: #d9534f; /* Vermelho sangue */
+}
+
+.success {
+  color: #5cb85c; /* Verde vitória */
 }

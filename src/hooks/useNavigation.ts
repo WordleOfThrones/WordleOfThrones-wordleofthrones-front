@@ -7,6 +7,10 @@ export const useNavigation = () => {
     router.push('/login');
   };
 
+  const navigateToRegister = (): void => {
+    router.push('/register');
+  }
+
   const handleLoginClick = () => {
     router.push('/register');
   };
@@ -19,5 +23,6 @@ export const useNavigation = () => {
     navigateToLogin,
     handleLoginClick,
     handleRegisterClick,
+    navigateToRegister
   };
 };

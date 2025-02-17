@@ -3,11 +3,11 @@ import styles from '../../styles/Header.module.css';
 import { useNavigation } from '../../hooks/useNavigation';
 
 export default function LoginButton() {
-  const { navigateToLogin } = useNavigation();
+  const { navigateToRegister } = useNavigation();
 
   return (
     <div className={styles.loginButtonContainer}>
-      <button className={styles.loginButton} onClick={navigateToLogin}>
+      <button className={styles.loginButton} onClick={navigateToRegister}>
         SEM PERFIL
       </button>
     </div>
