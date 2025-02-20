@@ -6,7 +6,36 @@
   font-style: normal;
 }
 
-/* Estilização geral */
+.registerPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200vh; 
+  background-color: #121214; 
+
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 20px;
+  left: 675px;
+  cursor: pointer;
+  margin-top: -50px;
+}
+
 .registerForm {
   display: flex;
   flex-direction: column;
@@ -14,18 +43,16 @@
   justify-content: center;
   width: 100%;
   max-width: 450px;
-  margin: 40px auto;
   padding: 25px;
-  background-color: #1a1a1d; /* Tom escuro medieval */
-  border: 2px solid #bfa181; /* Dourado envelhecido */
+  background-color: #1a1a1d;
+  border: 2px solid #bfa181;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* Título do formulário */
 .registerForm h2 {
   font-family: "GameOfThrones", serif;
-  font-size: 28px;
+  font-size: 24px;
   color: #bfa181;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -41,7 +68,7 @@
   border: 1px solid #bfa181;
   border-radius: 5px;
   color: #e0e0e0;
-  font-size: 16px;
+  font-size: 11px;
   font-family: "GameOfThrones", serif;
   transition: border 0.3s ease-in-out;
 }
@@ -67,7 +94,7 @@
   border: none;
   border-radius: 5px;
   color: #1a1a1d;
-  font-size: 18px;
+  font-size: 16px;
   font-family: "GameOfThrones", serif;
   text-transform: uppercase;
   cursor: pointer;
@@ -85,8 +112,8 @@
 
 /* Mensagens de erro e sucesso */
 .error, .success {
-  font-family: "GameOfThrones", serif;
-  font-size: 14px;
+  font-family: arial, sans-serif;
+  font-size: 12px;
   text-transform: uppercase;
   margin-top: 10px;
   text-align: center;
@@ -98,4 +125,20 @@
 
 .success {
   color: #5cb85c; /* Verde vitória */
+}
+
+.redirectText {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.link {
+  color: #bfa181;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
 }

@@ -1,12 +1,10 @@
 import { useState } from "react";
-import styles from "../styles/RegisterPage.module.css";
-import Logo from "@/components/Header/Logo"; 
+import styles from "../styles/LoginForm.module.css";
+import Logo from "@/components/Header/Logo";
 import Link from "next/link";
 
-export default function RegisterForm() {
+export default function LoginForm() {
   const [formData, setFormData] = useState({
-    nameUser: "",
-    nickname: "",
     email: "",
     password: "",
   });
@@ -26,7 +24,7 @@ export default function RegisterForm() {
     setSuccess("");
 
     try {
-      const response = await fetch("https://thronesapi-1.onrender.com/api/user/register", {
+      const response = await fetch("https://thronesapi-1.onrender.com/api/user/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -35,43 +33,26 @@ export default function RegisterForm() {
       const data = await response.json();
 
       if (response.ok) {
-        setSuccess("Cadastro realizado com sucesso! Faça login para continuar.");
-        setFormData({ nameUser: "", nickname: "", email: "", password: "" });
+        setSuccess("Login realizado com sucesso!");
       } else {
-        setError(data.message || "Erro ao cadastrar. Tente novamente.");
+        setError(data.message || "Erro ao fazer login. Tente novamente.");
       }
     } catch (error) {
       setError("Erro de conexão. Verifique sua internet e tente novamente.");
     } finally {
       setLoading(false);
     }
+    
   };
 
   return (
     <div className={styles.pageContainer}>
-      {/* Logo que leva de volta para a página inicial */}
       <div className={styles.logoContainer}>
         <Logo />
       </div>
 
-      <form className={styles.registerForm} onSubmit={handleSubmit}>
-        <h2>Cadastro</h2>
-        <input
-          type="text"
-          name="nameUser"
-          placeholder="Nome completo"
-          value={formData.nameUser}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="nickname"
-          placeholder="Apelido"
-          value={formData.nickname}
-          onChange={handleChange}
-          required
-        />
+      <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <h2>Login</h2>
         <input
           type="email"
           name="email"
@@ -89,18 +70,19 @@ export default function RegisterForm() {
           required
         />
         <button type="submit" disabled={loading}>
-          {loading ? "Cadastrando..." : "Cadastrar"}
+          {loading ? "Entrando..." : "Entrar"}
         </button>
+        {error && <p className={styles.loginError}>{error}</p>}
+        {success && <p className={styles.loginSuccess}>{success}</p>}
 
-        {error && <p className={styles.error}>{error}</p>}
-        {success && <p className={styles.success}>{success}</p>}
+        {/* Link para cadastro */}
+        <p className={styles.redirectText}>
+          Ainda não tem uma conta?{" "}
+          <Link href="/register">
+            <span className={styles.link}>Cadastre-se</span>
+          </Link>
+        </p>
       </form>
-      <p className={styles.redirectText}>
-  Já tem uma conta?{" "}
-  <Link href="/login">
-    <span className={styles.link}>Faça login</span>
-  </Link>
-</p>
     </div>
   );
 }
